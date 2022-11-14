@@ -204,3 +204,27 @@ console.log(`Second element of first row: ${arrayOfNumbers[0][1]}, whole second 
 
 const mixedArray = [["Joonho", "Khoa", "Reira"], [1, 2, 3, 4, 5, 6]]
 console.log(`Third elements of the first row: ${mixedArray[0][2]}, fifth element of the first row: ${mixedArray[0][4]}, the length of the second element of the first row ${mixedArray[0][1].length}`)
+
+// Create a class `Vehicle` and add type, name and horsepower to a Contructor. Create a methon called "printInfo" which will display in the terminal all informations about the vehicles.
+// Create 3 objects `boat`, `car` i `plane` based on the class `Vehicle`
+
+
+class Vehicle {
+    constructor(type, name, horsepower) {
+        this.type = type;
+        this.name = name;
+        this.horsepower = horsepower;
+    }
+    printInfo() {
+        console.log(this.type);
+        console.log(this.name);
+        console.log(this.horsepower);
+    }
+}
+
+const boat = new Vehicle("marine", "Boat", 600);
+boat.printInfo()
+const car = new Vehicle("car", "Car", 400);
+car.printInfo()
+const plane = new Vehicle("airplane", "Plane", 1000);
+plane.printInfo()
