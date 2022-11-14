@@ -96,7 +96,7 @@ let arithmetic_average = (numbers) => {
 
 console.log(arithmetic_average(numbers));
 
-// Create an array containing names of cities, return and console.log array with the letter count of every city
+// Create an array containing names of cities, return and display in the terminal an array with the letter count of every city
 //e.g.
 // ```JavaScript
 // const cities = ["Kraków", "Olsztyn", "Szczecin", "Ostrów Wielkopolski"];
@@ -170,7 +170,7 @@ const getSecondMaxNumber = (array) => {
 console.log(getSecondMaxNumber(numbers))
 
 // Create a variable with an array "names1" containing names
-// The write in terminal second element, fifth element, length of the array
+// Then display in the terminal second element, fifth element, length of the array
 // Define an empty array in a variable "names2", and one by one add 6 names to the array
 // Then display in the terminal the first element, the third element and the length of the array
 
@@ -188,3 +188,19 @@ names2.push("Syadza");
 
 
 console.log(`First name of second array: ${names2[0]}, third name of second array: ${names2[2]}, the length of second array: ${names2.length}`);
+
+
+//Create a multidimensional array - 3 rows and 4 columns in a variable "arrayOfNumbers"
+//e.g.
+// 1,2,3,4
+// 5,6,7,8
+// 9,10,11,12
+// Display in the terminal: the second element of the first row, the second row and the length of the third element of the first row
+//Create a multi-dimensional array in a variable "mixedArray" and in the first row it should contain an array with containing names and the second array should contain integers
+// Display in the terminal: third element of the first row, fifth element of the first row and the length element of the first row
+
+const arrayOfNumbers = [[1,2,3,4], [5,6,7,8], [9,10,11,12]];
+console.log(`Second element of first row: ${arrayOfNumbers[0][1]}, whole second row: ${arrayOfNumbers[1]}, the length of the third row ${arrayOfNumbers[2].length}`)
+
+const mixedArray = [["Joonho", "Khoa", "Reira"], [1, 2, 3, 4, 5, 6]]
+console.log(`Third elements of the first row: ${mixedArray[0][2]}, fifth element of the first row: ${mixedArray[0][4]}, the length of the second element of the first row ${mixedArray[0][1].length}`)
