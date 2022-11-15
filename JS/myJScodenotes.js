@@ -267,3 +267,42 @@ const changeDivColor = () => {
 }
 
 changeDivColor();
+
+
+//Na stronie znajduje się tabela z wynikami w lokalnych mistrzostwach piłkarskich. Poniżej znajduje się formularz, który wypełniają wszyscy sędziowie po ukończonych rozgrywkach.
+//
+// Napisz kod JavaScript w taki sposób, żeby po wybraniu odpowiednich drużyn nastąpiła walidacja:
+//
+// 1. Obie drużyny **muszą być różne**.
+// 2. Liczba goli **powinna być nieujemna**.
+//
+// Jeżeli formularz zostanie zweryfikowany poprawnie, odpowiednia informacja o wyniku spotkania powinna pojawić się w tabeli jako kolejny wiersz.
+
+
+const validateForm = () => {
+    const btn = document.querySelector('.btn');
+    const formValidation = (event) => {
+
+        // team names should be different
+        let team1 = document.getElementById('team1').value;
+        let team2 = document.querySelector("#team2").value;
+        if (team1 === team2) {
+            alert("Team names repeat");
+            event.preventDefault();
+        }
+        let points1 = document.getElementById("points1").value;
+        let points2 = document.getElementById("points2").value;
+        if (Math.sign(points1) === -1 || Math.sign(points2) === -1) {
+            alert("Input positive numbers");
+            event.preventDefault();
+        }
+
+    }
+    btn.addEventListener("click", formValidation);
+
+};
+
+const table = document.querySelector(".table")
+
+validateForm();
+
