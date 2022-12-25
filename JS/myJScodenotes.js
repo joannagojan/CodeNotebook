@@ -290,6 +290,7 @@ const validateForm = () => {
             alert("Team names repeat");
             event.preventDefault();
         }
+        // score points cannot be negative
         let points1 = document.getElementById("points1").value;
         let points2 = document.getElementById("points2").value;
         if (Math.sign(points1) === -1 || Math.sign(points2) === -1) {
@@ -302,7 +303,6 @@ const validateForm = () => {
 
 };
 
-const table = document.querySelector(".table")
 
 validateForm();
 
