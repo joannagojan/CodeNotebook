@@ -1,5 +1,6 @@
-# skomplikowane rzeczy sa uproszczone dla uzytkownika, ukrywanie szczegolow
 import random
+
+
 # class MailServer:
 #     def connect(self):
 #         print('connected')
@@ -14,7 +15,7 @@ import random
 #         print('disconnect')
 #
 #
-# m = MailServer # bardzo duzo krokow dla uzytkownika bez sensu
+# m = MailServer
 # m.connect()
 # m.authenticate()
 # m.send_mail()
@@ -40,77 +41,59 @@ import random
 # m = MailServer
 # m.send_mail()
 
+
+# Return the words in reverse, without multiple spaces
 # def reverse_words(text):
-#     if " " in text:
-#         list_ = text.split()
-#         for word in list_:
-#             backward_words = "".join(word)
-#             return backward_words
-#     else:
-#         return text[::-1]
-#
-# #
-# # print("This is an example!".split())
+#     result = ""
+#     split_text = "".join(text.split())#/ ' '.join(text.split())
+#     for sign in split_text[::-1]:
+#         result += sign
+#     return result
 #
 # print(reverse_words("This is an example!")) # ==> "sihT si na !elpmaxe"
 # print(reverse_words("double  spaces"))      # ==> "elbuod  secaps"
-
+#
+# # Hash words except for last 4 characters
 # def maskify(cc):
+#     result = ""
 #     if len(cc) == 0:
 #         return ""
-#     elif len(cc) <= 4:
-#         return cc
 #     if len(cc) > 5:
-#         x = ""
-#         for sign in reversed(cc):
-#             in range(len(cc) - 4):
-#                 x += "#"
-#         return x
+#         for sign in range(len(cc) - 4):
+#             result += "#"
+#         return result + cc[-4::]
+#     else:
+#         return cc
 #
-# # print(maskify("4556364607935616")) # "############5616"
+# print(maskify("4556364607935616")) # "############5616"
 # print(maskify("64607935616"))#    "#######5616"
 # print(maskify("1")) #            "1"
-# # print(maskify( ""))        #    ""
-# #
-# # print(maskify("Skippy"))   #"##ippy"
-# #
-# # print(maskify("Nananananananananananananananana Batman!")) # "####################################man!"
+# print(maskify( ""))        #    ""
+# print(maskify("Skippy"))   #"##ippy"
+# print(maskify("Nananananananananananananananana Batman!")) # "####################################man!"
 
 
-# # Split strings (times out???)
+# # Split strings
 # def solution(s):
-#     if len(s) % 2 == 0:
-#         result = []
-#         while len(s) > 0:
-#             b = s[0:2]
-#             result.append(b)
-#             s = s[2::]
-#         return result
-#     else:
-#         result = []
-#         while len(s) > 0:
-#             b = s[0:2]
-#             result.append(b)
-#             if len(s) % 2 == 0:
-#                 s = s[2::]
-#             else:
-#                 s = s[2::] + '_'
-#         return result
-#
-#
-#
-# print(solution(''))# =>  ['ab', 'c_']
-# # print(solution('abcdef'))# => ['ab', 'cd', 'ef']
-
-# def array_diff(a, b):
 #     result = []
-#     for sign in a:
-#         if sign not in b:
-#             result.append(sign)
+#     iterator = 0
+#     while len(s) > 0:
+#         result.append(s[iterator:iterator+2])
 #     return result
 #
 #
-# print(array_diff([1,2,2,2,3],[2]))#==
+# print(solution('abcdef'))  # => ['ab', 'cd', 'ef']
+# print(solution('Split'))  # => ['Sp', 'li', 't_']
+#
+def array_diff(a, b):
+    result = []
+    for sign in a:
+        if sign not in b:
+            result.append(sign)
+    return result
+
+
+print(array_diff([1,2,2,2,3],[2]))#==
 
 # def get_middle(s):
 #     if len(s) % 2 == 0:
@@ -447,18 +430,18 @@ import random
 #                 print(j)
 
 
-how_big = 6
-snow = ["°", "☆", "●", "★", "*", " ", " "]
-
-for x in range(how_big):
-    for n in range(how_big - x):
-        print(*random.choices(snow), end="")
-    for z in range(x):
-        print("/", end="")
-    for y in range(x):
-        print('\u005c', end="")
-    for n in range(how_big - x):
-        print(*random.choices(snow), end="")
-    print()
-print(x*" " + "||")
-print("𝓜𝓮𝓻𝓻𝔂 𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼")
+# how_big = 6
+# snow = ["°", "☆", "●", "★", "*", " ", " "]
+#
+# for x in range(how_big):
+#     for n in range(how_big - x):
+#         print(*random.choices(snow), end="")
+#     for z in range(x):
+#         print("/", end="")
+#     for y in range(x):
+#         print('\u005c', end="")
+#     for n in range(how_big - x):
+#         print(*random.choices(snow), end="")
+#     print()
+# print(x*" " + "||")
+# print("𝓜𝓮𝓻𝓻𝔂 𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼")
